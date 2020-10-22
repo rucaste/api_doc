@@ -114,7 +114,7 @@ contentores | array de objectos | lista com objectos do tipo contentor |
 
 
 &nbsp;
-### Listas de Locais
+## Listas de Locais
 
 As listagens de locais podem ser obtidas no endpoint respectivo, é possível filtar e ordenar os resultados.
 
@@ -156,7 +156,7 @@ Onde:
 
 
 &nbsp;
-#### Opções de filtragem
+### Opções de filtragem
 
 è possível Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
 
@@ -300,3 +300,8 @@ api/contentores/locais/?datainicio__dias=50
 
 api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
 ```
+
+&nbsp;
+### Opções de ordenação
+
+
