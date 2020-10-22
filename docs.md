@@ -319,6 +319,19 @@ data_ultima_lavagem
 tipo
 ```
 
+Para se ordenar utilizar-se o parametro `ordering` que pode conter um número indiscriminado de argumentos.
+
+O nome do atriuto ordena por esse campo por ordem crescente, caso se precedido de `-`, a ordem é descrescente.
+
+Por exemplo:
+
+
+```http request
+api/contentores/locais/?ordering=datafim,-rua,-local
+```
+Ordena os resultados primeiro através da `datafim` por ordem crecente, depois através da `rua` por ordem decrescente e finalmente através de `local` tabḿe por ordem decrescente
+
+
 &nbsp;
 &nbsp;
 # Contentor
