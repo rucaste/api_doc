@@ -127,13 +127,13 @@ A resposta venda seguinte forma:
 {
     "count": 374,
     "next": "https://cabi.pt/apiv2/contentores/locais2/?page=7&tipo=sele",
-    "previous": "https://cabi.pt/apiv2/contentores/locais2/?page=9&tipo=sele",,
+    "previous": "https://cabi.pt/apiv2/contentores/locais2/?page=9&tipo=sele",
     "results": [ 
-       Local1…,
-		     Local2…, 
-		     Local3…,
-		     …
-		   ],
+       Local1,
+       Local2,
+       ...
+       Localn
+       ],
 }
 ```
 Por prédefinição as respostas vêm paginadas com 20 objectos, sendo possível alterar o número de registos de cada página através do query parameter ‘per_page’ até ao máximo de 100000 registos. Deste modo:
@@ -149,10 +149,10 @@ api/contentores/locais/?per_page=1000
 devolve os resultado com 1000 elementos por página
 
 Onde:
-count representa o total de objectos devolvidos
-next representa o link para a pŕoxima página
-previous representa o link para a página anterior
-results é a lista de resultados até ao máximo do número de elementos por página
+* `count` representa o total de objectos devolvidos
+* `next` representa o link para a pŕoxima página
+* `previous` representa o link para a página anterior
+* `results` é a lista de resultados até ao máximo do número de elementos por página
 
 
 &nbsp;
