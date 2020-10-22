@@ -9,7 +9,7 @@ ENDPOINT:
 api/contentores/locais
 ```
 
-&nbsp
+&nbsp;
 ### O objecto local
 
 Cada objecto poder ser obtido isoladamente através do seu id utilizando o endpoint, por exemplo:
@@ -88,6 +88,7 @@ devolve o objecto com id igual a 2517, com a seguinte estrutura:
     }
 ```
 
+&nbsp;
 #### Atributos
 
 Atributo | Tipo | Descrição | Opções
@@ -109,9 +110,10 @@ data_ultima_lavagem | data | data da lavagem mais recente de qualquer contentor 
 elementos | array de strings | chave primaria do objecto |
 id | string | lista com a identificação do tipo de contentor, ou cais, ou fixador que constituem o local |
 niveis_dict | objecto | contagem dos níveis de enchimento do total de recolhas dos contentores do local. Apenas aplicável a contentores de papel, plástico e vidro |
-contentores | array de objectos | lista com objectos do tipo contentor |
+contentores | array de objectos | lista com objectos do tipo contentor |    
 
 
+&nbsp;
 #### Opções de filtragem
 
 Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
@@ -170,6 +172,8 @@ datainicio, datafim, data_ultima_recolha, data_ultima_lavagem
 qualquer destes critérios de filtragem tem de ser utilizado da seguinte forma,
 
 se $criterio for o nome do critério a utilizar (datainicio, datafim, data_ultima_recolha, data_ultima_lavagem), temos as seguintes opções
+
+
 
 
 
