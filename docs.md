@@ -304,6 +304,20 @@ api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
 &nbsp;
 ### Opções de ordenação
 
+Os resultados podem ser ordenados utilizando os seguintes atributos:
+```http request
+codigolocal
+local
+localidade
+rua
+numero
+esta_ativo
+datainicio
+datafim
+data_ultima_recolha
+data_ultima_lavagem
+tipo
+```
 
 &nbsp;
 &nbsp;
