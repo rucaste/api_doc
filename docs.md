@@ -1,6 +1,6 @@
 # Local
 
-Este é um objecto que representa um local físico que agrupa um conjunto de contentores.
+Este é um objecto que representa um local físico que agrupa um conjunto de contentores utilizados para a deposição de resíduos.
 É possível obter um conjunto de locais ou a informação de cada local isoladamente. 
 
 ENDPOINT:
@@ -15,7 +15,7 @@ api/contentores/locais
 Cada objecto poder ser obtido isoladamente através do seu id utilizando o endpoint, por exemplo:
  
 ```http request 
-api/contentores/locais/2517
+GET api/contentores/locais/2517
 ```
 
 devolve o objecto com id igual a 2517, com a seguinte estrutura:
