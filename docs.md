@@ -155,28 +155,106 @@ api/contentores/locais/?codigolocal__icontains=002
 ```
 
 
+##### local
 
-.
+Filtrar por `local` devolve todos os resultados com local igual ao parâmetro.
 
-.
+Filtrar por `local__iexact` devolve todos os resultados com local igual ao parâmetro, de modo não case sensitive.
 
-.
+Filtrar por `local__icontains` devolve todos os resultados que o local contém o parâmetro, de modo não case sensitive.
 
-.
-
-.
-
-
-datainicio, datafim, data_ultima_recolha, data_ultima_lavagem
-
-qualquer destes critérios de filtragem tem de ser utilizado da seguinte forma,
-
-se $criterio for o nome do critério a utilizar (datainicio, datafim, data_ultima_recolha, data_ultima_lavagem), temos as seguintes opções
+```http request
+api/contentores/locais/?local__iexact=002
+```
 
 
+##### localidade
+
+Filtrar por `localidade` devolve todos os resultados com localidade igual ao parâmetro.
+
+Filtrar por `localidade__iexact` devolve todos os resultados com localidade igual ao parâmetro, de modo não case sensitive.
+
+Filtrar por `localidade__icontains` devolve todos os resultados que o localidade contém o parâmetro, de modo não case sensitive.
+
+```http request
+api/contentores/locais/?localidade=002
+```
+
+##### rua
+
+Filtrar por `rua` devolve todos os resultados com rua igual ao parâmetro.
+
+Filtrar por `rua__iexact` devolve todos os resultados com rua igual ao parâmetro, de modo não case sensitive.
+
+Filtrar por `rua__icontains` devolve todos os resultados que o rua contém o parâmetro, de modo não case sensitive.
+
+```http request
+api/contentores/locais/?rua__icontains=abril
+```
+
+##### numero
+
+Filtrar por `numero` devolve todos os resultados com numero igual ao parâmetro.
+
+Filtrar por `numero__iexact` devolve todos os resultados com numero igual ao parâmetro, de modo não case sensitive.
+
+Filtrar por `numero__icontains` devolve todos os resultados que o numero contém o parâmetro, de modo não case sensitive.
+
+```http request
+api/contentores/locais/?numero=7054
+```
+
+##### elementos
+
+Filtrar por `elementos` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array elementos.
+A pesquisa não é case sensitive, exemplo:
 
 
+```http request
+api/contentores/locais/?elementos=cais
+```
+
+##### esta_ativo
+
+Filtrar por `esta_ativo` devolve todos os resultados em que o ativo é igual ao parâmetro
 
 
+```http request
+api/contentores/locais/?esta_ativo=True
+```
+
+##### contentores
+
+Filtrar por `contentores_count` devolve todos os resultados em que o número de contentores é igual ao parãmtreo de pesquisa.
+
+Filtrar por `contentores_count__lte` devolve todos os resultados em que o número de contentores é menor ou igual ao parãmtreo de pesquisa. de modo não case sensitive.
+
+Filtrar por `contentores_count__gte` devolve todos os resultados em que o número de contentores é maior ou igual ao parãmtreo de pesquisa.
+
+```http request
+api/contentores/locais/?contentores_count__gte=50
+```
+
+#### «datas
+
+A filtragem por os atríbutos de data (datainicio, datafim, data_ultima_recolha, data_ultima_lavagem) funcionam todas do mesmo modo
+
+Se $atr for o nome do atríbuto a utilizar, temos as seguintes opções
 
 
+query | Tipo de parâmetro  | devolve todos os registo com:
+-------- | ---- | ---------
+$atr__lte | data (`d`) | a data do critério menor ou igual q `d` | 
+$atr__lt | data (`d`)  | a data do critério menor que `d` | 
+$atr__gte | data (`d`)  | a data do critério maior ou igual a `d` |
+$atr__gt | data (`d`)  | a data do critério maior que `d` |
+$atr__dias | inteiro (`n`) | a data do critério ocorreu nos últimos `n` dias |
+
+Exemplos:
+
+
+```http request
+api/contentores/locais/?datainicio__dias=50
+
+api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
+```
