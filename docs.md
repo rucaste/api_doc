@@ -90,7 +90,7 @@ devolve o objecto com id igual a 2517, com a seguinte estrutura:
 &nbsp;
 ### Atributos
 
-Atributo | Tipo | Descrição | Opções
+Atríbuto | Tipo | Descrição | Opções
 -------- | ---- | --------- | ------
 id | inteiro | chave primaria do objecto | 
 tipo | string | categoria do local | <li>Domicílios</li><li>Stock</li><li>Comercial</li><li>Industrial</li><li>Aterro</li><li>Grande produtor</li><li>Seletiva</li><li>Misto</li><li>Indiferenciado</li><li>Usuário doméstico</li>  
@@ -106,10 +106,10 @@ datainicio | data | data de inserção do local no sistema MOBA |
 datafim | data | data de desativação do local |
 data_ultima_recolha | data | data da recolha mais recente de qualquer contentor que pertence ao local |
 data_ultima_lavagem | data | data da lavagem mais recente de qualquer contentor que pertence ao local |
-elementos | array de strings | chave primaria do objecto |
+elementos | array de hashes | chave primaria do objecto |
 id | string | lista com a identificação do tipo de contentor, ou cais, ou fixador que constituem o local |
-niveis_dict | objecto | contagem dos níveis de enchimento do total de recolhas dos contentores do local. Apenas aplicável a contentores de papel, plástico e vidro |
-contentores | array de objectos | lista com objectos do tipo contentor |    
+niveis_dict | hash | contagem dos níveis de enchimento do total de recolhas dos contentores do local. Apenas aplicável a contentores de papel, plástico e vidro |
+contentores | array de hashes | lista com objectos do tipo contentor |    
 
 
 &nbsp;
@@ -118,7 +118,7 @@ contentores | array de objectos | lista com objectos do tipo contentor |
 As listagens de locais podem ser obtidas no endpoint respectivo, é possível filtar e ordenar os resultados.
 
 ```http request
-api/contentores/locais/
+GET api/contentores/locais/
 ```
 A resposta venda seguinte forma:
 
