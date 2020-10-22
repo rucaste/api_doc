@@ -277,7 +277,7 @@ Filtrar por `contentores_count__gte` devolve todos os resultados em que o númer
 api/contentores/locais/?contentores_count__gte=50
 ```
 
-#### «datas
+#### datas
 
 A filtragem por os atríbutos de data (datainicio, datafim, data_ultima_recolha, data_ultima_lavagem) funcionam todas do mesmo modo
 
@@ -304,4 +304,8 @@ api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
 &nbsp;
 ### Opções de ordenação
 
+
+&nbsp;
+&nbsp;
+# Contentor
 
