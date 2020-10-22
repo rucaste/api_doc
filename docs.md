@@ -9,6 +9,7 @@ ENDPOINT:
 api/contentores/locais
 ```
 
+&nbsp
 ### O objecto local
 
 Cada objecto poder ser obtido isoladamente através do seu id utilizando o endpoint, por exemplo:
