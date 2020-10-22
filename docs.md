@@ -1,4 +1,4 @@
-## Local
+# Local
 
 Este é um objecto que representa um local físico que agrupa um conjunto de contentores.
 É possível obter um conjunto de locais ou a informação de cada local isoladamente. 
@@ -10,7 +10,7 @@ api/contentores/locais
 ```
 
 &nbsp;
-### O objecto local
+## O objecto local
 
 Cada objecto poder ser obtido isoladamente através do seu id utilizando o endpoint, por exemplo:
  
@@ -89,7 +89,7 @@ devolve o objecto com id igual a 2517, com a seguinte estrutura:
 ```
 
 &nbsp;
-#### Atributos
+### Atributos
 
 Atributo | Tipo | Descrição | Opções
 -------- | ---- | --------- | ------
@@ -114,9 +114,51 @@ contentores | array de objectos | lista com objectos do tipo contentor |
 
 
 &nbsp;
+### Listas de Locais
+
+As listagens de locais podem ser obtidas no endpoint respectivo, é possível filtar e ordenar os resultados.
+
+```http request
+api/contentores/locais/
+```
+A resposta venda seguinte forma:
+
+```json
+{
+    "count": 374,
+    "next": "https://cabi.pt/apiv2/contentores/locais2/?page=7&tipo=sele",
+    "previous": "https://cabi.pt/apiv2/contentores/locais2/?page=9&tipo=sele",,
+    "results": [ 
+       Local1…,
+		     Local2…, 
+		     Local3…,
+		     …
+		   ],
+}
+```
+Por prédefinição as respostas vêm paginadas com 20 objectos, sendo possível alterar o número de registos de cada página através do query parameter ‘per_page’ até ao máximo de 100000 registos. Deste modo:
+
+```http request
+api/contentores/locais
+```
+devolve os resultado com 20 elementos por página
+```http request
+api/contentores/locais/?per_page=1000
+```
+
+devolve os resultado com 1000 elementos por página
+
+Onde:
+count representa o total de objectos devolvidos
+next representa o link para a pŕoxima página
+previous representa o link para a página anterior
+results é a lista de resultados até ao máximo do número de elementos por página
+
+
+&nbsp;
 #### Opções de filtragem
 
-Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
+è possível Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
 
 ```http request
 api/contentores/locais/?tipo=indiferenciado&local=alcabideche
