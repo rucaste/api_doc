@@ -3,7 +3,7 @@
 Este é um objecto que representa um local físico que agrupa um conjunto de contentores utilizados para a deposição de resíduos.
 É possível obter um conjunto de locais ou a informação de cada local isoladamente. 
 
-ENDPOINT:
+o endpoint só aceita os verbos GET, HEAD e OPTIONS e localiza-se em:
 
 ```http request
 api/contentores/locais
@@ -12,12 +12,11 @@ api/contentores/locais
 &nbsp;
 ## O objecto local
 
-Cada objecto poder ser obtido isoladamente através do seu id utilizando o endpoint, por exemplo:
+Cada objecto obtêm-se isoladamente através do seu id utilizando, por exemplo:
  
 ```http request 
 GET api/contentores/locais/2517
 ```
-
 devolve o objecto com id igual a 2517, com a seguinte estrutura:
 
 ```json 
