@@ -129,10 +129,10 @@ A resposta venda seguinte forma:
     "next": "https://cabi.pt/apiv2/contentores/locais2/?page=7&tipo=sele",
     "previous": "https://cabi.pt/apiv2/contentores/locais2/?page=9&tipo=sele",
     "results": [ 
-       Local1,
-       Local2,
-       ...
-       Localn
+       local1,
+       local2,
+       ..
+       localn
        ],
 }
 ```
