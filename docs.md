@@ -5,7 +5,7 @@ Este é um objecto que representa um local físico que agrupa um conjunto de con
 
 ENDPOINT:
 
-```http 
+```http request
 api/contentores/locais
 ```
 
@@ -13,7 +13,7 @@ api/contentores/locais
 
 Cada objecto poder ser obtido isoladamente através do seu id utilizando o endpoint, por exemplo:
  
-```http 
+```http request 
 api/contentores/locais/2517
 ```
 
@@ -110,6 +110,65 @@ id | string | lista com a identificação do tipo de contentor, ou cais, ou fixa
 niveis_dict | objecto | contagem dos níveis de enchimento do total de recolhas dos contentores do local. Apenas aplicável a contentores de papel, plástico e vidro |
 contentores | array de objectos | lista com objectos do tipo contentor |
 
+
+#### Opções de filtragem
+
+Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
+
+```http request
+api/contentores/locais/?tipo=indiferenciado&local=alcabideche
+```
+
+##### tipo
+
+Filtrar por `tipo` devolve todos os resultados que contém o parâmetro de pesquisa no atríbuto tipo.
+A pesquisa não é case sensitive, exemplo:
+
+```http request
+api/contentores/locais/?tipo=indifer
+```
+
+
+##### circuito
+
+Filtrar por `circuito` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array circuitos.
+A pesquisa não é case sensitive, exemplo:
+
+
+```http request
+api/contentores/locais/?circuitos=nd_11
+```
+
+##### codigolocal
+
+Filtrar por `codigolocal` devolve todos os resultados com codigolocal igual ao parâmetro.
+
+Filtrar por `codigolocal__iexact` devolve todos os resultados com codigolocal igual ao parâmetro, de modo não case sensitive.
+
+Filtrar por `codigolocal__icontains` devolve todos os resultados que o codigolocal contém o parâmetro, de modo não case sensitive.
+
+```http request
+api/contentores/locais/?codigolocal__icontains=002
+```
+
+
+
+.
+
+.
+
+.
+
+.
+
+.
+
+
+datainicio, datafim, data_ultima_recolha, data_ultima_lavagem
+
+qualquer destes critérios de filtragem tem de ser utilizado da seguinte forma,
+
+se $criterio for o nome do critério a utilizar (datainicio, datafim, data_ultima_recolha, data_ultima_lavagem), temos as seguintes opções
 
 
 
