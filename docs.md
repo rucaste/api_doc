@@ -93,7 +93,7 @@ devolve o objecto com id igual a 2517, com a seguinte estrutura:
 Atríbuto | Tipo | Descrição | Opções
 -------- | ---- | --------- | ------
 id | inteiro | chave primaria do objecto | 
-tipo | string | categoria do local | <li>Domicílios</li><li>Stock</li><li>Comercial</li><li>Industrial</li><li>Aterro</li><li>Grande produtor</li><li>Seletiva</li><li>Misto</li><li>Indiferenciado</li><li>Usuário doméstico</li>  
+tipo | string | categoria do local | Domicílios<br />Stock<li>Comercial</li><li>Industrial</li><li>Aterro</li><li>Grande produtor</li><li>Seletiva</li><li>Misto</li><li>Indiferenciado</li><li>Usuário doméstico</li>  
 circuitos | string | nome dos circuitos que estão associados a um ou mais contentores que fazem parte do local |
 codigolocal | string | código único de identificação do local no sistema MOBA |
 local | string | parte da morada conforme definido no sistema MOBA |
