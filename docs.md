@@ -134,32 +134,33 @@ A resposta venda seguinte forma:
        ],
 }
 ```
-Por prédefinição as respostas vêm paginadas com 20 objectos, sendo possível alterar o número de registos de cada página através do query parameter ‘per_page’ até ao máximo de 100000 registos. Deste modo:
-
-```http request
-api/contentores/locais
-```
-devolve os resultado com 20 elementos por página
-```http request
-api/contentores/locais/?per_page=1000
-```
-
-devolve os resultado com 1000 elementos por página
-
 Onde:
 * `count` representa o total de objectos devolvidos
 * `next` representa o link para a pŕoxima página
 * `previous` representa o link para a página anterior
-* `results` é a lista de resultados até ao máximo do número de elementos por página
+* `results` representa a lista de resultados até ao máximo do número de elementos por página
+
+
+As respostas vêm paginadas com 20 objecto. É possível alterar o número de registos de cada página através do query parameter ‘per_page’ até ao máximo de 100000 registos.
+
+```http request
+GET api/contentores/locais
+```
+devolve os resultado com 20 elementos por página
+```http request
+GET api/contentores/locais/?per_page=1000
+```
+devolve os resultado com 1000 elementos por página
+
 
 
 &nbsp;
 ### Filtragem
 
-è possível Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
+Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
 
 ```http request
-api/contentores/locais/?tipo=indiferenciado&local=alcabideche
+GET api/contentores/locais/?tipo=indiferenciado&local=alcabideche
 ```
 
 ##### tipo
@@ -168,18 +169,17 @@ Filtrar por `tipo` devolve todos os resultados que contém o parâmetro de pesqu
 A pesquisa não é case sensitive, exemplo:
 
 ```http request
-api/contentores/locais/?tipo=indifer
+GET api/contentores/locais/?tipo=indifer
 ```
 
 
 ##### circuito
 
-Filtrar por `circuito` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array circuitos.
+Filtrar por `circuito` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array de circuitos.
 A pesquisa não é case sensitive, exemplo:
 
-
 ```http request
-api/contentores/locais/?circuitos=nd_11
+GET  api/contentores/locais/?circuitos=nd_11
 ```
 
 ##### codigolocal
@@ -191,7 +191,7 @@ Filtrar por `codigolocal__iexact` devolve todos os resultados com codigolocal ig
 Filtrar por `codigolocal__icontains` devolve todos os resultados que o codigolocal contém o parâmetro, de modo não case sensitive.
 
 ```http request
-api/contentores/locais/?codigolocal__icontains=002
+GET api/contentores/locais/?codigolocal__icontains=002
 ```
 
 
@@ -204,7 +204,7 @@ Filtrar por `local__iexact` devolve todos os resultados com local igual ao parâ
 Filtrar por `local__icontains` devolve todos os resultados que o local contém o parâmetro, de modo não case sensitive.
 
 ```http request
-api/contentores/locais/?local__iexact=002
+GET api/contentores/locais/?local__iexact=002
 ```
 
 
@@ -214,10 +214,10 @@ Filtrar por `localidade` devolve todos os resultados com localidade igual ao par
 
 Filtrar por `localidade__iexact` devolve todos os resultados com localidade igual ao parâmetro, de modo não case sensitive.
 
-Filtrar por `localidade__icontains` devolve todos os resultados que o localidade contém o parâmetro, de modo não case sensitive.
+Filtrar por `localidade__icontains` devolve todos os resultados que a localidade contém o parâmetro, de modo não case sensitive.
 
 ```http request
-api/contentores/locais/?localidade=002
+GET api/contentores/locais/?localidade=002
 ```
 
 ##### rua
@@ -226,10 +226,10 @@ Filtrar por `rua` devolve todos os resultados com rua igual ao parâmetro.
 
 Filtrar por `rua__iexact` devolve todos os resultados com rua igual ao parâmetro, de modo não case sensitive.
 
-Filtrar por `rua__icontains` devolve todos os resultados que o rua contém o parâmetro, de modo não case sensitive.
+Filtrar por `rua__icontains` devolve todos os resultados que a rua contém o parâmetro, de modo não case sensitive.
 
 ```http request
-api/contentores/locais/?rua__icontains=abril
+GET api/contentores/locais/?rua__icontains=abril
 ```
 
 ##### numero
@@ -241,63 +241,121 @@ Filtrar por `numero__iexact` devolve todos os resultados com numero igual ao par
 Filtrar por `numero__icontains` devolve todos os resultados que o numero contém o parâmetro, de modo não case sensitive.
 
 ```http request
-api/contentores/locais/?numero=7054
+GET api/contentores/locais/?numero=7054
 ```
 
 ##### elementos
 
-Filtrar por `elementos` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array elementos.
+Filtrar por `elementos` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array de elementos.
 A pesquisa não é case sensitive, exemplo:
 
-
 ```http request
-api/contentores/locais/?elementos=cais
+GET api/contentores/locais/?elementos=cais
 ```
 
 ##### esta_ativo
 
-Filtrar por `esta_ativo` devolve todos os resultados em que o ativo é igual ao parâmetro
-
-
-```http request
-api/contentores/locais/?esta_ativo=True
-```
-
-##### contentores
-
-Filtrar por `contentores_count` devolve todos os resultados em que o número de contentores é igual ao parãmtreo de pesquisa.
-
-Filtrar por `contentores_count__lte` devolve todos os resultados em que o número de contentores é menor ou igual ao parãmtreo de pesquisa. de modo não case sensitive.
-
-Filtrar por `contentores_count__gte` devolve todos os resultados em que o número de contentores é maior ou igual ao parãmtreo de pesquisa.
+Filtrar por `esta_ativo` devolve todos os resultados em que o ativo é igual ao parâmetro, exemplo:
 
 ```http request
-api/contentores/locais/?contentores_count__gte=50
+GET api/contentores/locais/?esta_ativo=true
 ```
 
-#### datas
+##### contagem de contentores
 
-A filtragem por os atríbutos de data (datainicio, datafim, data_ultima_recolha, data_ultima_lavagem) funcionam todas do mesmo modo
+Filtrar por `contentores_count` devolve todos os resultados em que o número de contentores é igual ao parâmetro de pesquisa.
 
-Se $atr for o nome do atríbuto a utilizar, temos as seguintes opções
+Filtrar por `contentores_count__lte` devolve todos os resultados em que o número de contentores é menor ou igual ao parâmetro de pesquisa.
 
+Filtrar por `contentores_count__gte` devolve todos os resultados em que o número de contentores é maior ou igual ao parâmetro de pesquisa.
 
-query | Tipo de parâmetro  | devolve todos os registo com:
--------- | ---- | ---------
-$atr__lte | data (`d`) | a data do critério menor ou igual q `d` | 
-$atr__lt | data (`d`)  | a data do critério menor que `d` | 
-$atr__gte | data (`d`)  | a data do critério maior ou igual a `d` |
-$atr__gt | data (`d`)  | a data do critério maior que `d` |
-$atr__dias | inteiro (`n`) | a data do critério ocorreu nos últimos `n` dias |
+```http request
+GET api/contentores/locais/?contentores_count__gte=50
+```
+
+#### datainicio
+
+Filtrar por `datainicio__lte` devolve todos os resultados em que a datainicio é menor ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `datainicio__lt` devolve todos os resultados em que a datainicio é menor do que o parâmetro de pesquisa (data)
+
+Filtrar por `datainicio__gte` devolve todos os resultados em que a datainicio é maior ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `datainicio__gt` devolve todos os resultados em que a datainicio é maior do que o parâmetro de pesquisa (data)
+
+Filtrar por `datainicio__dias` devolve todos os resultados em que a datainicio ocorreu nos últimos `n` dias, em que `n` é o parâmetro de pesquisa (número)
 
 Exemplos:
 
+```http request
+GET api/contentores/locais/?datainicio__dias=50
+
+GET api/contentores/locais/?datainicio__gte=2020-01-01
+```
+
+
+#### datafim
+
+Filtrar por `datafim__lte` devolve todos os resultados em que a datafim é menor ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `datafim__lt` devolve todos os resultados em que a datafim é menor do que o parâmetro de pesquisa (data)
+
+Filtrar por `datafim__gte` devolve todos os resultados em que a datafim é maior ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `datafim__gt` devolve todos os resultados em que a datafim é maior do que o parâmetro de pesquisa (data)
+
+Filtrar por `datafim__dias` devolve todos os resultados em que a datafim ocorreu nos últimos `n` dias, em que `n` é o parâmetro de pesquisa (número)
+
+Exemplos:
 
 ```http request
-api/contentores/locais/?datainicio__dias=50
+GET api/contentores/locais/?datafim__dias=50
 
-api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
+GET api/contentores/locais/?datafim__gte=2020-01-01
 ```
+
+#### data_ultima_recolha
+
+Filtrar por `data_ultima_recolha__lte` devolve todos os resultados em que a data_ultima_recolha é menor ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_recolha__lt` devolve todos os resultados em que a data_ultima_recolha é menor do que o parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_recolha__gte` devolve todos os resultados em que a data_ultima_recolha é maior ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_recolha__gt` devolve todos os resultados em que a data_ultima_recolha é maior do que o parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_recolha__dias` devolve todos os resultados em que a data_ultima_recolha ocorreu nos últimos `n` dias, em que `n` é o parâmetro de pesquisa (número)
+
+Exemplos:
+
+```http request
+GET api/contentores/locais/?data_ultima_recolha__dias=50
+
+GET api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
+```
+
+
+
+#### data_ultima_recolha
+
+Filtrar por `data_ultima_lavagem__lte` devolve todos os resultados em que a data_ultima_lavagem é menor ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_lavagem__lt` devolve todos os resultados em que a data_ultima_lavagem é menor do que o parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_lavagem__gte` devolve todos os resultados em que a data_ultima_lavagem é maior ou igual ao parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_lavagem__gt` devolve todos os resultados em que a data_ultima_lavagem é maior do que o parâmetro de pesquisa (data)
+
+Filtrar por `data_ultima_lavagem__dias` devolve todos os resultados em que a data_ultima_lavagem ocorreu nos últimos `n` dias, em que `n` é o parâmetro de pesquisa (número)
+
+Exemplos:
+
+```http request
+GET api/contentores/locais/?data_ultima_lavagem__dias=50
+
+GET api/contentores/locais/?data_ultima_lavagem__gte=2020-01-01
+```
+
 
 &nbsp;
 ### Ordenação
