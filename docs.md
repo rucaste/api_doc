@@ -92,30 +92,29 @@ devolve o objecto com id igual a 2517, com a seguinte estrutura:
 
 Atríbuto | Tipo | Descrição | Opções
 -------- | ---- | --------- | ------
-id | inteiro | chave primaria do objecto | 
-tipo | string | categoria do local | Domicílios<br />Stock<br />Comercial<br />Industrial<br />Aterro<br />Grande produtor<br />Seletiva<br />Misto<br />Indiferenciado<br />Usuário doméstico 
-circuitos | string | nome dos circuitos que estão associados a um ou mais contentores que fazem parte do local |
+id | inteiro | chave primaria | 
+tipo | string | categoria | Domicílios<br />Stock<br />Comercial<br />Industrial<br />Aterro<br />Grande produtor<br />Seletiva<br />Misto<br />Indiferenciado<br />Usuário doméstico 
+circuitos | array de strings | lista com os nome dos circuitos que estão associados ao local |
 codigolocal | string | código único de identificação do local no sistema MOBA |
 local | string | parte da morada conforme definido no sistema MOBA |
 localidade | string | parte da morada conforme definido no sistema MOBA |
 rua | string | parte da morada conforme definido no sistema MOBA |
 numero | string | parte da morada conforme definido no sistema MOBA |
-ativo | boleano | estado | <li>True</li><li>False</li> 
-geom | objecto geoespacial (ponto) | localização geoespacial do local (srid=4326) |
-datainicio | data | data de inserção do local no sistema MOBA |
-datafim | data | data de desativação do local |
-data_ultima_recolha | data | data da recolha mais recente de qualquer contentor que pertence ao local |
-data_ultima_lavagem | data | data da lavagem mais recente de qualquer contentor que pertence ao local |
-elementos | array de hashes | chave primaria do objecto |
-id | string | lista com a identificação do tipo de contentor, ou cais, ou fixador que constituem o local |
-niveis_dict | hash | contagem dos níveis de enchimento do total de recolhas dos contentores do local. Apenas aplicável a contentores de papel, plástico e vidro |
-contentores | array de hashes | lista com objectos do tipo contentor |    
+ativo | boleano | estado | true<br />false
+geom | objecto geoespacial (ponto) | localização geoespacial (srid=4326) |
+datainicio | data | data de inserção no sistema MOBA |
+datafim | data | data de desativação |
+data_ultima_recolha | data | data da recolha mais recente |
+data_ultima_lavagem | data | data da lavagem mais recente |
+elementos | array de strings | lista com o tipologia de cada elemento pertencente ao local |
+niveis_dict | hash | contagem dos níveis de enchimento das recolhas no local. Apenas aplicável a contentores de papel, plástico e vidro |
+contentores | array de hashes | lista com objectos do tipo [contentor](#contentor) |    
 
 
 &nbsp;
 ## Listas de Locais
 
-As listagens de locais podem ser obtidas no endpoint respectivo, é possível filtar e ordenar os resultados.
+As listagens de locais podem ser obtidas no endpoint respectivo, é possível [filtar](#filtragem) e [ordenar](#ordenação) os resultados.
 
 ```http request
 GET api/contentores/locais/
@@ -155,7 +154,7 @@ Onde:
 
 
 &nbsp;
-### Opções de filtragem
+### Filtragem
 
 è possível Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por `&` por exemplo
 
@@ -301,7 +300,7 @@ api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
 ```
 
 &nbsp;
-### Opções de ordenação
+### Ordenação
 
 Os resultados podem ser ordenados utilizando os seguintes atributos:
 ```http request
