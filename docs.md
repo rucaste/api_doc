@@ -163,6 +163,23 @@ Os filtros deveram ser adicionados após o simbolo `?` Separando cada filtro por
 GET api/contentores/locais/?tipo=indiferenciado&local=alcabideche
 ```
 
+Podemos utilizar os seguinte critérios de filtragem:
+* [tipo](#tipo)
+* [circuito](#circuito)
+* [codigolocal](#codigolocal)
+* [local](#local)
+* [localidade](#localidade)
+* [rua](#rua)
+* [numero](#numero)
+* [elementos](#elementos)
+* [ativo](#ativo)
+* [contagem de contentores](#contagem-de-contentores)
+* [datainicio](#datainicio)
+* [datafim](#datafim)
+* [data_ultima_recolha](#data_ultima_recolha)
+* [data_ultima_lavagem](#data_ultima_lavagem)
+
+
 ##### tipo
 
 Filtrar por `tipo` devolve todos os resultados que contém o parâmetro de pesquisa no atríbuto tipo.
@@ -335,8 +352,7 @@ GET api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
 ```
 
 
-
-#### data_ultima_recolha
+#### data_ultima_lavagem
 
 Filtrar por `data_ultima_lavagem__lte` devolve todos os resultados em que a data_ultima_lavagem é menor ou igual ao parâmetro de pesquisa (data)
 
