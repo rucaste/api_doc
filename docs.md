@@ -179,7 +179,7 @@ Podemos utilizar os seguinte critérios de filtragem:
 * [data_ultima_recolha](#data_ultima_recolha)
 * [data_ultima_lavagem](#data_ultima_lavagem)
 
-
+&nbsp;
 ##### tipo
 
 Filtrar por `tipo` devolve todos os resultados que contém o parâmetro de pesquisa no atríbuto tipo.
@@ -188,8 +188,7 @@ A pesquisa não é case sensitive, exemplo:
 ```http request
 GET api/contentores/locais/?tipo=indifer
 ```
-
-
+&nbsp;
 ##### circuito
 
 Filtrar por `circuito` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array de circuitos.
@@ -198,7 +197,7 @@ A pesquisa não é case sensitive, exemplo:
 ```http request
 GET  api/contentores/locais/?circuitos=nd_11
 ```
-
+&nbsp;
 ##### codigolocal
 
 Filtrar por `codigolocal` devolve todos os resultados com codigolocal igual ao parâmetro.
@@ -210,8 +209,7 @@ Filtrar por `codigolocal__icontains` devolve todos os resultados que o codigoloc
 ```http request
 GET api/contentores/locais/?codigolocal__icontains=002
 ```
-
-
+&nbsp;
 ##### local
 
 Filtrar por `local` devolve todos os resultados com local igual ao parâmetro.
@@ -223,8 +221,7 @@ Filtrar por `local__icontains` devolve todos os resultados que o local contém o
 ```http request
 GET api/contentores/locais/?local__iexact=002
 ```
-
-
+&nbsp;
 ##### localidade
 
 Filtrar por `localidade` devolve todos os resultados com localidade igual ao parâmetro.
@@ -236,7 +233,7 @@ Filtrar por `localidade__icontains` devolve todos os resultados que a localidade
 ```http request
 GET api/contentores/locais/?localidade=002
 ```
-
+&nbsp;
 ##### rua
 
 Filtrar por `rua` devolve todos os resultados com rua igual ao parâmetro.
@@ -248,7 +245,7 @@ Filtrar por `rua__icontains` devolve todos os resultados que a rua contém o par
 ```http request
 GET api/contentores/locais/?rua__icontains=abril
 ```
-
+&nbsp;
 ##### numero
 
 Filtrar por `numero` devolve todos os resultados com numero igual ao parâmetro.
@@ -260,7 +257,7 @@ Filtrar por `numero__icontains` devolve todos os resultados que o numero contém
 ```http request
 GET api/contentores/locais/?numero=7054
 ```
-
+&nbsp;
 ##### elementos
 
 Filtrar por `elementos` devolve todos os resultados que contém o parâmetro de pesquisa em qualquer elemento do array de elementos.
@@ -269,15 +266,15 @@ A pesquisa não é case sensitive, exemplo:
 ```http request
 GET api/contentores/locais/?elementos=cais
 ```
-
-##### esta_ativo
+&nbsp;
+##### ativo
 
 Filtrar por `esta_ativo` devolve todos os resultados em que o ativo é igual ao parâmetro, exemplo:
 
 ```http request
 GET api/contentores/locais/?esta_ativo=true
 ```
-
+&nbsp;
 ##### contagem de contentores
 
 Filtrar por `contentores_count` devolve todos os resultados em que o número de contentores é igual ao parâmetro de pesquisa.
@@ -289,7 +286,7 @@ Filtrar por `contentores_count__gte` devolve todos os resultados em que o númer
 ```http request
 GET api/contentores/locais/?contentores_count__gte=50
 ```
-
+&nbsp;
 #### datainicio
 
 Filtrar por `datainicio__lte` devolve todos os resultados em que a datainicio é menor ou igual ao parâmetro de pesquisa (data)
@@ -309,8 +306,7 @@ GET api/contentores/locais/?datainicio__dias=50
 
 GET api/contentores/locais/?datainicio__gte=2020-01-01
 ```
-
-
+&nbsp;
 #### datafim
 
 Filtrar por `datafim__lte` devolve todos os resultados em que a datafim é menor ou igual ao parâmetro de pesquisa (data)
@@ -330,7 +326,7 @@ GET api/contentores/locais/?datafim__dias=50
 
 GET api/contentores/locais/?datafim__gte=2020-01-01
 ```
-
+&nbsp;
 #### data_ultima_recolha
 
 Filtrar por `data_ultima_recolha__lte` devolve todos os resultados em que a data_ultima_recolha é menor ou igual ao parâmetro de pesquisa (data)
@@ -350,8 +346,7 @@ GET api/contentores/locais/?data_ultima_recolha__dias=50
 
 GET api/contentores/locais/?data_ultima_recolha__gte=2020-01-01
 ```
-
-
+&nbsp;
 #### data_ultima_lavagem
 
 Filtrar por `data_ultima_lavagem__lte` devolve todos os resultados em que a data_ultima_lavagem é menor ou igual ao parâmetro de pesquisa (data)
