@@ -1,6 +1,6 @@
 # Local
 
-Este é um objecto que representa um local físico que agrupa um conjunto de [contentores](#contentor) utilizados para a deposição de resíduos.
+Este é um objecto que representa um local físico que agrupa um conjunto de [contentores](#contentor) utilizados para a deposição de resíduos, de um determinado [produto](#produto).
 É possível obter um conjunto de locais ou a informação de cada local isoladamente. 
 
 o endpoint só aceita os verbos GET, HEAD e OPTIONS e localiza-se em:
@@ -402,4 +402,25 @@ Ordena os resultados primeiro por `datafim` (ordem crecente), depois por `rua` (
 &nbsp;
 &nbsp;
 # Contentor
+
+Este é um objecto que representa um recipiente físico para a deposição de resíduos, de um determinado [produto](#produto).
+É possível obter um conjunto de contentores ou a informação de cada contentor isoladamente. 
+
+o endpoint só aceita os verbos GET, HEAD e OPTIONS e localiza-se em:
+
+```http request
+api/contentores/contentores
+```
+
+
+&nbsp;
+&nbsp;
+# Produto
+
+
+```http request
+api/dopbase/produtos
+```
+
+
 
